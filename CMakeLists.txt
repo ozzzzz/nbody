@@ -3,9 +3,9 @@ project(nbody)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(include)
+include_directories(include/nbody)
 
-file(GLOB SOURCES "src/*.cpp")
+file(GLOB SOURCES "src/*.cpp" "src/*.h")
 
 add_library(nbody SHARED ${SOURCES})
 #add_library(nbody SHARED include/utils.h src/utils.cpp)

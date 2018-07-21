@@ -7,6 +7,10 @@
 
 #include <string>
 #include <iostream>
+#include "../../src/body.h"
+#include "../../src/vector.h"
+#include "../../src/force.h"
+#include "../../src/constants.h"
 
 using namespace std;
 

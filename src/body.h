@@ -23,11 +23,17 @@ public:
 
     float mass;
 
-    void move(float time_stamp) {
-        v3 new_position = add(this->position, mul( v3(time_stamp), this->velocity) );
+    void move(float dt) {
+        v3 new_position = add(this->position, mul( v3(dt), this->velocity) );
         this->position = new_position;
     }
 
+    void accelerate(float dt, v3 acceleration) {
+        this->velocity = add(this->velocity, mul(v3(dt), acceleration));
+    }
+
 };
+
+void show_positions(Body *bodies, int n);
 
 #endif //NBODY_BODY_H

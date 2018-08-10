@@ -7,6 +7,7 @@
 
 #include <math.h>
 #include <stdio.h>
+#include <string>
 
 class v3 {
 public:
@@ -29,31 +30,23 @@ public:
     float z;
 
     void show() {
-        printf("(%f, %f, %f)\n", this->x, this->y, this->z);
-    }
+        printf("%f %f %f\n", this->x, this->y, this->z);
+    };
+
+    std::string to_string() {
+        return std::to_string(this->x) + " " + std::to_string(this->y) + " " + std::to_string(this->z);
+    };
 
 };
 
-v3 add(v3 a, v3 b) {
-    return v3(a.x + b.x, a.y + b.y, a.z + b.z);
-}
+v3 add(v3 a, v3 b);
 
-v3 sub(v3 a, v3 b) {
-    return v3(a.x - b.x, a.y - b.y, a.z - b.z);
-}
+v3 sub(v3 a, v3 b);
 
-v3 mul(v3 a, v3 b) {
-    return v3(a.x * b.x, a.y * b.y, a.z * b.z);
-}
+v3 mul(v3 a, v3 b);
 
-v3 div(v3 a, v3 b) {
-    return v3(a.x / b.x, a.y / b.y, a.z / b.z);
-}
+v3 div(v3 a, v3 b);
 
-float distance(v3 a, v3 b) {
-    v3 diff = sub(a, b);
-    v3 squared = mul(diff, diff);
-    return sqrt(squared.x + squared.y + squared.z);
-}
+float distance(v3 a, v3 b);
 
 #endif //NBODY_VECTOR_H
